@@ -1,0 +1,17 @@
+a:hover {
+    background-color: rgb(222, 156, 196);
+    color: rgb(253, 247, 213);
+}
+a:link {
+    background-color: rgb(253, 247, 213);
+    color:rgb(222, 156, 196)
+}
+a:focus {
+    color: rgb(201, 109, 173);
+}
+
+
+h1 {
+    background-color: rgb(196, 156, 104);
+    color: ;
+}
