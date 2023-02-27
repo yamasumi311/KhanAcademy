@@ -8,33 +8,33 @@ function bookshelf(processingJS) {
         var books = [
             {
                 title: "cute marcimus",
-                art: getImage("avatars/marcimus-orange"),
+                art: getImage("https://www.kasandbox.org/programming-images/avatars/marcimus-orange"),
                 artSize: 50,
                 stars: 5
             }, {
                 title: "Mr Pants with hat !!",
-                art: getImage("avatars/mr-pants-with-hat"),
+                art: getImage("https://www.kasandbox.org/programming-images/avatars/mr-pants-with-hat"),
                 stars: 3
             }, {
                 title: "Mr Pink !!",
-                art: getImage("avatars/mr-pink"),
+                art: getImage("https://www.kasandbox.org/programming-images/avatars/mr-pink"),
                 stars: 2
             },
             {
                 title: "orange juice squad",
-                art: getImage("avatars/orange-juice-squid"),
+                art: getImage("https://www.kasandbox.org/programming-images/avatars/orange-juice-squid"),
                 stars: 4
             }, {
                 title: "Old space man",
-                art: getImage("avatars/old-spice-man-blue"),
+                art: getImage("https://www.kasandbox.org/programming-images/avatars/old-spice-man-blue"),
                 stars: 1
             }, {
                 title: "Purple pi teal",
-                art: getImage("avatars/purple-pi-teal"),
+                art: getImage("https://www.kasandbox.org/programming-images/avatars/purple-pi-teal"),
                 stars: 5
             }, {
                 title: "Spunky sam green",
-                art: getImage("avatars/spunky-sam-green"),
+                art: getImage("https://www.kasandbox.org/programming-images/avatars/spunky-sam-green"),
                 stars: 3
             }
         ];

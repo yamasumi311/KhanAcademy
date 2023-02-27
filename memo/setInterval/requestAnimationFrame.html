@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Animating styles with requestAnimationFrame</title>
+    </head>
+    <body>
+    <div>
+        <img id="ohnoes" src="https://www.kasandbox.org/programming-images/creatures/OhNoes.png">
+        <h1>Oh noes, the world will end in
+            <span id="countdown">30</span>
+            seconds!
+        </h1>
+        <div id="info"></div>
+    </div>
+    
+  <script>
+  var infoDiv = document.getElementById("info");
+  
+  var countdown = document.getElementById("countdown");
+  var countItDown = function() {
+    var currentTime = parseFloat(countdown.textContent);
+    if (currentTime > 0) {
+       countdown.textContent = currentTime - 1;   
+    } else {
+        window.clearInterval(timer);
+    }
+    
+  };
+  var timer = window.setInterval(countItDown, 1000);
+  
+  // Step 1. What element do we want to animate?
+  var ohnoes = document.getElementById("ohnoes");
+  ohnoes.style.width = "50px";
+  
+  // Step 2. What function will change it each time?
+  var statTime =  new Date().getTime();
+  var makeItBigger = function() {
+    var currTime = new Date().getTime();
+    var newWidth = (50 + (currTime - startTime)/1000 * 30); //you can change 30 to change the speed
+    infoDiv.textContent = ohnoes.style.width;
+    // "50px" + 1 -> 50px1
+    ohnoes.style.width =  newWith + "px"; //(parseFloat(ohnoes.style.width) + 1) + "px";  
+    if (newWidth < 300) {
+       window.requestAnimationFrame(makeItBigger);
+    }
+   
+  };
+  makeItBigger(); //The browser is now calling makeItBigger right before it repaints, which is about 60 frames per second.
+  // how do we slow down the animation?
+  // ==> to keep track of how much has gone by
+  // ===> and then calculate what the new width should be based on that
+  // ====> first, we stat by remembering the start time, in miliseconds, before the funtion is called 
+  
+  
+  // Step 3: Call that on an interval
+  // window.setInterval(makeItBigger, 1000/30); 
+  // 1) Browser does not garranty that they exactly obay this delay.
+  //    User interraction might call your callback later. so it won't get this smooth animation. 
+  // 2) Browser will call your function even if this tab is hidden which uses up computer processing power unecessarily.
+  // => new function available in modern browsers! designed specificaly with DOM animations in mind.: window.requestAnimationFrame
+  
+  
+  </script>
+
+    </body>
+</html>
