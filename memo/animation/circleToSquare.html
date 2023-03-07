@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle to square</title>
+    <style>
+        #circle-to-square {
+            width: 200px;
+            height: 200px;
+            background-color: coral; 
+            animation: square-to-circle 2s 1s infinite alternate;
+        }
+
+        @keyframes square-to-circle {
+            0%{
+                border-radius: 0 0 0 0;
+                background-color: coral;
+                transform: rotate(0deg);
+            }
+            25%{
+                border-radius: 50% 0 0 0;
+                background-color: darksalmon;
+                transform: rotate(45deg);
+            }
+            50%{
+                border-radius: 50% 50% 0 0;
+                background-color: indianred;
+                transform: rotate(90deg);
+            }
+            75%{
+                border-radius: 50% 50% 50% 0;
+                background-color: lightcoral;
+                transform: rotate(135deg);
+            }
+            100%{
+                border-radius: 50%;
+                background-color: darksalmon;
+                transform: rotate(180deg);
+            }
+        }
+
+        span {
+            font-family: monospace, Arial, Helvetica, sans-serif;
+            background-color: rgb(219, 212, 212);
+            font-size: small;
+            border-radius: 10%;
+            font-weight: lighter;
+            padding: .2em;
+        }
+
+        #transition {
+            width: 100px;
+            height: 100px;
+            background: sandybrown;
+            transition: width 2s, height 1s;
+        }
+
+        #transition:hover {
+            width: 300px;
+            height: 200px;
+            background-color: lightsalmon;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>CSS Animation</h2>
+    <div id="circle-to-square"></div>
+    <br>
+    <br>
+    <div>
+        <ul>
+            <li>The animation-name is <span>square-to-circle</span>.</li>
+            <li>The animation-duration is <span>2s</span>.</li>
+            <li>The animation-delay is <span>1s</span>.</li>
+            <li>The animation-iteration-count is <span>infinite</span>, so it will carry on indefinitely</li>
+            <li>The animation-direction is <span>alternate</span>, so it will play from beginning to end, then bakc to the beginning, then gain to the end, and so on.</li>
+        </ul>
+    <h2>CSS Transition</h2>
+    <p>Hover over the div element below, to see the transition the transition effect</p>
+    <div id="transition"></div>
+    
+</body>
+</html>
