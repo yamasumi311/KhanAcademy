@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Circle to square</title>
     <style>
+        body {
+            margin: 3em;
+        }
         #circle-to-square {
+            margin: 3em;
             width: 200px;
             height: 200px;
             background-color: coral; 
@@ -43,33 +47,48 @@
 
         span {
             font-family: monospace, Arial, Helvetica, sans-serif;
-            background-color: rgb(219, 212, 212);
+            background-color: rgb(241, 231, 231);
             font-size: small;
             border-radius: 10%;
             font-weight: lighter;
-            padding: .2em;
+            padding: .1em;
+            border: solid .5px rgb(116, 113, 113);
         }
 
         #transition {
             width: 100px;
             height: 100px;
-            background: sandybrown;
-            transition: width 2s, height 1s;
+            background-color: sandybrown;
+            transition: width, height, background-color, transform;
+            transition-duration: 2s;
+            transition-timing-function: ease-out;
         }
 
         #transition:hover {
             width: 300px;
-            height: 200px;
-            background-color: lightsalmon;
+            height: 50px;
+            background-color: peru;
         }
 
+        #rotate {
+            margin: 3em;
+            width: 300px;
+            height: 300px;
+            background: indianred;
+            transition: width 2s, height 2s, background-color 2s, transform 2s;
+        }
+
+        #rotate:hover {
+            width: 100px;
+            height: 100px;
+            transform: rotate(180deg);
+            background: lightcoral;
+        }
     </style>
 </head>
 <body>
     <h2>CSS Animation</h2>
     <div id="circle-to-square"></div>
-    <br>
-    <br>
     <div>
         <ul>
             <li>The animation-name is <span>square-to-circle</span>.</li>
@@ -78,9 +97,20 @@
             <li>The animation-iteration-count is <span>infinite</span>, so it will carry on indefinitely</li>
             <li>The animation-direction is <span>alternate</span>, so it will play from beginning to end, then bakc to the beginning, then gain to the end, and so on.</li>
         </ul>
+    <br>
     <h2>CSS Transition</h2>
     <p>Hover over the div element below, to see the transition the transition effect</p>
     <div id="transition"></div>
-    
+    <h3><span>transition-timing-function</span></h3>
+    <ul>
+        <li><span>ease</span>: specifies a transition effect with a slow start, then fast , then end slowly(this is default)</li>
+        <li><span>linear</span>: specifies a transition effect with the same speed from start to end</li>
+        <li><span>ease-in</span>: specifies a transition efffect with a slow start</li>
+        <li><span>ease-in-out</span>: specifies a transition effect with a slow start and end</li>
+        <li><span>cubic-bezier(n,n,n,n)</span>: lets you define your own values</li>
+    </ul>
+    <h2>Transition + Transform</h2>
+    <p>Hover over the div element below:</p>
+    <div id="rotate"></div>
 </body>
 </html>
